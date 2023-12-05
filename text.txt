@@ -1,0 +1,88 @@
+**Phase 1: Préparation et Planification**
+1. **Établissement des exigences du projet** (1 semaine)
+   - Analyse des besoins
+   - Définition des objectifs du projet
+   - Détermination des ressources nécessaires
+
+2. **Conception de l'architecture du système** (2 semaines)
+   - Conception de la base de données
+   - Architecture du backend (PHP, MySQL)
+   - Architecture du frontend (HTML, CSS, JavaScript)
+   - Conception des API pour l'application Android
+
+**Phase 2: Développement du Frontend et Backend de Base**
+3. **Configuration initiale de l'environnement de développement** (1 semaine)
+   - Mise en place des serveurs de développement
+   - Configuration des bases de données
+   - Configuration des repos Git pour le contrôle de version
+
+4. **Création de la structure de base du site web** (2 semaines)
+   - Maquettes des pages web
+   - Intégration de base HTML/CSS
+   - Scripting de base JavaScript
+
+5. **Développement du backend de base** (2 semaines)
+   - Mise en place des scripts PHP
+   - Création des tables MySQL
+   - Authentification des utilisateurs
+
+**Phase 3: Implémentation des Fonctionnalités Spécifiques**
+6. **Intégration 3D avec WebGL et Three.js** (3 semaines)
+   - Apprentissage de Three.js
+   - Modélisation des objets 3D
+   - Intégration de Three.js dans le site
+
+7. **Création et entraînement du Chatbot avec Dialogflow** (4 semaines)
+   - Conception des flux de dialogue
+   - Entraînement des intentions et des entités
+   - Intégration du chatbot sur le site
+
+8. **Jeu de Piste Interactif** (3 semaines)
+   - Conception des éléments du jeu
+   - Développement de la logique côté client
+   - Implémentation de la sauvegarde de progression côté serveur
+
+9. **Personnalisation de l'Expérience Utilisateur** (2 semaines)
+   - Création du système de préférences utilisateur
+   - Test et optimisation des fonctionnalités personnalisées
+
+10. **Mode Multi-joueur et Chat en Temps Réel** (4 semaines)
+    - Configuration du serveur WebSocket
+    - Développement de la logique multi-joueur
+    - Intégration et tests du chat en temps réel
+
+11. **Synchronisation avec l'Application Android** (4 semaines)
+    - Développement de l'API REST
+    - Création de l'application Android de base avec Kotlin
+    - Test de la synchronisation entre le site et l'app
+
+12. **Système de Récompenses et de Badges** (3 semaines)
+    - Conception des badges et des récompenses
+    - Développement de la logique des récompenses
+    - Intégration avec la base de données
+
+13. **Intégration des APIs de Réseaux Sociaux** (2 semaines)
+    - Implémentation de l'authentification OAuth
+    - Développement des fonctionnalités de partage social
+    - Test du partage de contenu sur les plateformes sociales
+
+**Phase 4: Tests et Lancement**
+14. **Tests Approfondis** (4 semaines)
+    - Tests unitaires et d'intégration
+    - Tests de charge et de performance
+    - Correction des bugs
+
+15. **Préparation du Lancement** (2 semaines)
+    - Optimisation des performances
+    - Sécurisation de l'application
+    - Préparation de la documentation
+
+16. **Lancement du Site** (1 semaine)
+    - Déploiement final sur le serveur de production
+    - Surveillance du lancement
+    - Correction des problèmes post-lancement
+
+17. **Feedback et Améliorations Post-Lancement** (Continu)
+    - Collecte de feedback des utilisateurs
+    - Mises à jour et améliorations continues
+

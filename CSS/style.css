@@ -1,0 +1,305 @@
+/* Here is the custom.css stylesheet
+    A stylesheet for all the pages of our website
+*/
+
+
+/* 
+We create a new font 'Pirates' for our pages 
+https://www.w3schools.com/cssref/css3_pr_font-face_rule.asp
+*/
+
+@font-face {
+    font-family: Pirates;
+    /*Link to the downloaded .ttf .We previously downloaded the file on DAFONT 
+    (https://www.dafont.com)*/
+    src: url("../RESSOURCES/FONTS/Pirates.ttf");
+}
+
+/* Style de la barre de navigation */
+nav {
+    display: flex;
+    justify-content: space-between; /* Répartit l'espace entre les éléments */
+    align-items: center; /* Centre les éléments verticalement */
+    padding: 0 20px; /* Padding horizontal */
+    box-shadow: none; /* Supprime l'ombre */
+    background-color: transparent; /* Rend le fond transparent */
+}
+
+/* Style du titre dans la barre de navigation */
+.nav-title {
+    font-family: 'Pirates', cursive; /* Utilise la police personnalisée */
+    font-size: 24px; /* Taille de la police du titre */
+    color: #d3a625; /* Couleur dorée pour le style pirate */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Ombre portée pour le texte */
+}
+
+/* Style de la liste des liens de navigation */
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style des éléments de la liste des liens de navigation */
+.nav-links li {
+    padding: 10px 15px;
+}
+
+/* Style des liens de la barre de navigation */
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 28px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Style des liens de la barre de navigation au survol */
+.nav-links a:hover {
+    color: #d3a625;
+}
+
+/* Style du reste de l'en-tête */
+
+
+
+
+body {
+    background-image: url("../RESSOURCES/Images/BACKGROUNDS/old_paper_background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*Here is the calling of our new font-family*/
+    font-family: Pirates;
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+    text-shadow: 2px 2px 2px white, -2px -2px 2px white;
+}
+
+h2 {
+    font-size: 30px;
+    text-shadow: 2px 2px 2px white, -2px -2px 2px white;
+}
+
+
+/*Flex configuration for 3 columns */
+
+.flex-container {
+    /*Activate Flex display mode*/
+    display: flex;
+    /*This parameter allow columns display in Flex mode */
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+/* Remove the flex property from the wildcard selector */
+.flex-container > * {
+    padding: 10px;
+    margin: 10px;
+}
+
+.column {
+     /* Largeur fixe pour chaque colonne */
+     width: 200px;
+    flex-shrink: 0;
+    margin: 20px;
+    ; /* Adjust the percentage as necessary */
+    box-sizing: border-box; /* This makes sure padding is included in the width */
+    border-radius: 10px;
+    border: 1px #000000 solid;
+    overflow: hidden; /* Empêche le débordement du contenu */
+    position: relative; /* Pour positionner absolument les infos par rapport à cette div */
+    transition: transform 0.3s ease;
+    flex: 0 0 auto;
+
+}
+/* Style initial des images (plus petites) */
+.column img {
+    width: 40%; /* Taille initiale plus petite */
+    height: auto;
+    transition: transform 0.3s ease; /* Transition douce pour le zoom */
+}
+
+/* Style pour zoomer l'image et la colonne au survol */
+.column:hover {
+    transform: scale(1.1); /* Agrandit la colonne au survol */
+}
+
+.column:hover img {
+    transform: scale(1.25); /* Agrandit davantage l'image au survol */
+}
+
+/* Style pour le texte d'information qui apparaîtra au survol */
+.info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+    color: #fff;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    text-align: center;
+    padding: 10px;
+    overflow: hidden; /* Cache le texte débordant */
+    white-space: nowrap; /* Empêche le texte de passer à la ligne suivante */
+    border-right: .15em solid orange; /* Curseur de l'effet de saisie de texte */
+    width: 0; /* Départ de l'animation */
+    transition: none; /* Aucune transition pour width */
+    animation: typing 2s steps(40, end) forwards; 
+}
+
+/* Animation de saisie de texte */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* Afficher le texte d'information au survol */
+.column:hover .info {
+    transform: translateY(0);
+}
+
+img {
+    width: 400px;
+    height: 300px;
+}
+
+p {
+    font-size: 30px;
+    color : white;
+}
+
+
+/* " >* " means for this class and ALL childs*/
+
+.flex-container>* {
+    padding: 10px;
+    flex: 1 100%;
+    margin: 10px;
+}
+
+.column_1 {
+    /*gradient color*/
+    background-image: linear-gradient(moccasin, white);
+
+}
+
+.column_2 {
+    /*gradient color*/
+    background-image: linear-gradient(mediumseagreen, white);
+
+}
+
+.column_3 {
+    /*gradient color*/
+    background-image: linear-gradient(royalblue, white);
+
+}
+
+
+/* Create a "link" template like a button (with transition)*/
+
+.link {
+    opacity: 0.5;
+    transition: opacity 0.5s linear;
+}
+
+.link:hover {
+    opacity: 1;
+}
+
+
+/* for display over 768px width */
+
+@media all and (min-width: 768px) {
+    /* flex parameter for all columns */
+    .column {
+        flex: 1 auto;
+    }
+}
+
+/* ... vos autres styles ... */
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100; /* Assurez-vous que la vidéo est derrière tout le contenu */
+    -webkit-backdrop-filter: blur(10px); /* Pour les navigateurs Safari */
+    backdrop-filter: blur(100px); /* L'effet de flou */
+  }
+  
+  /* Ajoutez des styles supplémentaires si nécessaire pour les autres éléments pour qu'ils soient visibles au-dessus de la vidéo */
+ 
+
+  #video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+
+  
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(10px);
+    z-index: 1; /* Assurez-vous que cette couche est entre la vidéo et le contenu */
+  }
+  
+  .flex-container {
+    position: relative;
+    z-index: 2; /* Plus élevé que .video-overlay pour s'assurer que le contenu est au-dessus de l'effet de flou */
+  }
+/* Style pour le conteneur du carrousel */
+
+/* Style pour le carrousel lui-même */
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-container {
+    overflow: hidden;
+}
+
+
+
+.carousel-group {
+    display: flex;
+    min-width: 100%; /* Chaque groupe occupe 100% de la largeur du conteneur */
+}
+
+
+/* Style pour les boutons de navigation */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+
+  

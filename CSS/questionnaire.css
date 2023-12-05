@@ -1,0 +1,151 @@
+body {
+    font-family: 'Arial', sans-serif;
+    /* background-color: #eceff1; */
+    background : url("../Ressources/Images/BACKGROUNDS/old_paper_background.jpg");
+    margin: 0;
+    padding: 0;
+}
+
+.user-info {
+    padding: 20px;
+    /* background-color: #fff; */
+    background : url("../Ressources/Images/BACKGROUNDS/old_paper_background.jpg");
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.user-name {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.user-results {
+    font-size: 1em;
+    color: #333;
+}
+
+.mac-close-btn {
+    background-color: #ff3b47;
+    border: none;
+    border-radius: 80%;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.mac-close-btn:focus {
+    outline: none;
+}
+
+.question-container {
+    background-color: url("../Ressources/Images/BACKGROUNDS/old_paper_background.jpg");
+    border-radius: 8px;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+    margin: 40px;
+    padding: 20px;
+}
+
+.question {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.answer-list {
+    list-style: none;
+    padding: 0;
+}
+
+.answer-list li {
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background-color: #f7f9fa;
+    border: 1px solid #cfd8dc;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.answer-list li:hover {
+    background-color: #eceff1;
+    transform: translateX(10px);
+}
+
+.timer, .points {
+    font-size: 0.9em;
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 5px;
+    background-color: #cfd8dc;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background : url("../Ressources/Images/BACKGROUNDS/old_paper_background.jpg");
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+}
+
+.link {
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.link:hover {
+    opacity: 1;
+}
+
+/* Ajouter des transitions pour l'animation des informations de réponse */
+.info {
+    display: none;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+.column:hover .info {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.nav-title {
+    display: block;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -20px;
+    font-size: 1.2em;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    padding-top: 35px;
+    
+    /* ... autres styles ... */
+}
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    /* ... autres styles ... */
+}
+

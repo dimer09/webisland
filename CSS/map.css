@@ -1,0 +1,77 @@
+
+/* Here is the MAP.CSS stylesheet
+    A specific stylesheet for the map.html page
+*/
+
+/* we just adjust the background of this page to a cave background redefining CSS backgrounds settings*/
+
+@font-face {
+    font-family: Pirates;
+    /*Link to the downloaded .ttf .We previously downloaded the file on DAFONT 
+    (https://www.dafont.com)*/
+    src: url("../RESSOURCES/FONTS/Pirates.ttf");
+}
+
+body {
+    background-image: url("../RESSOURCES/Images/BACKGROUNDS/cave_background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Pirates;
+    text-align: center;
+}
+
+table {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 6px gold double;
+    /* 
+    Box shadow properties 
+    https://www.w3schools.com/cssref/css3_pr_box-shadow.asp
+
+    h-offset : Required. The horizontal offset of the shadow. A positive value puts the shadow on the right side of the box, a negative value puts the shadow on the left side of the box	
+    v-offset : Required. The vertical offset of the shadow. A positive value puts the shadow below the box, a negative value puts the shadow above the box	
+    blur : Optional. The blur radius. The higher the number, the more blurred the shadow will be	
+    spread : Optional. The spread radius. A positive value increases the size of the shadow, a negative value decreases the size of the shadow	
+    color : Optional. The color of the shadow. The default value is the text color. Look at CSS Color Values for a complete list of possible color values. 
+    */
+    box-shadow: 0px 0px 45px 20px goldenrod;
+}
+
+
+/* To ensure there are no padding and margin in the table cells */
+
+td {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+/* Each part of the map must have the same attributes of width and height (150*150) */
+
+img {
+    width: 150px;
+    height: 150px;
+    display: block;
+}
+
+
+/* 
+We use FLEX display for the three boxes of the page
+https://www.w3schools.com/css/css3_flexbox.asp
+*/
+
+#map-area,
+header,
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+
+/*END*/
+
+
+
