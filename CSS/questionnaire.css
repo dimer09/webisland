@@ -6,6 +6,15 @@ body {
     padding: 0;
 }
 
+@font-face {
+    font-family: 'Pirates';
+    src: url('../fonts/Pirates.ttf') format('truetype');
+}
+body, button, input, textarea {
+    font-family: 'Pirates', sans-serif;
+}
+
+
 .user-info {
     padding: 20px;
     /* background-color: #fff; */
@@ -45,7 +54,7 @@ body {
 }
 
 .question-container {
-    background-color: url("../Ressources/Images/BACKGROUNDS/old_paper_background.jpg");
+    background-color: #f7f9fa;
     border-radius: 8px;
     box-shadow: 0 6px 10px rgba(0,0,0,0.1);
     margin: 40px;
@@ -147,5 +156,51 @@ footer {
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     /* ... autres styles ... */
+}
+
+
+/* Style pour l'affichage du score final */
+#final-result {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 50px;
+}
+
+/* Style pour le badge si le score est élevé */
+#badge {
+    display: block;
+    margin: 20px auto;
+    width: 100px; /* Ajustez la taille selon vos besoins */
+}
+
+/* Styles pour les boutons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espace entre les boutons */
+    margin-top: 20px;
+}
+
+.button-container button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-container button:first-child {
+    background-color: #007bff; /* Bleu */
+    color: white;
+}
+
+.button-container button:last-child {
+    background-color: #dc3545; /* Rouge */
+    color: white;
+}
+
+.button-container button:hover {
+    opacity: 0.9;
 }
 
