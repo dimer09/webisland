@@ -52,9 +52,9 @@ try {
                 <nav>
                     <div class="nav-title">WEB ISLAND KINSHASA O2027</div>
                     <ul class="nav-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
+                        <li><a href="#home">Map</a></li>
+                        <li><a href="forum.php">Forum</a></li>
+                        <li><a href="">Courses</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
@@ -98,7 +98,8 @@ try {
                             echo "</div>"; // Fin de la colonne pour cette étape
                         }
                         ?>
-        
+                       
+                                
                         
                 </h1>
                 <p>Here are some postcards from our trip to Web Island. Enjoy !!!</p>
@@ -145,6 +146,49 @@ try {
             video.play();
             });
         </script>
+         <script>
+        // Déclarez une variable JavaScript pour le nom d'utilisateur
+        var username = <?php echo json_encode($_SESSION['username'] ?? 'Guest'); ?>;
+        document.addEventListener('DOMContentLoaded', function() {
+        const chatMessages = document.getElementById('chatMessages');
+        const messageInput = document.getElementById('messageInput');
+        const sendButton = document.getElementById('sendButton');
+        console.log({ chatMessages, messageInput, sendButton });
+        // const username = "<?php echo htmlspecialchars($_SESSION['username'] ?? 'Guest'); ?>"; 
+        // Utilisez 'Guest' comme nom par défaut
+       
+        console.log('Nom d\'utilisateur :', username);
+        
+
+        function sendMessage() {
+            const message = messageInput.value.trim();
+            if (message) {
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('message');
+                messageElement.innerHTML = `
+                    <span class="username">${username}</span>: ${message}
+                `;
+
+                chatMessages.appendChild(messageElement);
+                messageInput.value = '';
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        }
+
+        sendButton.addEventListener('click', sendMessage);
+
+        messageInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    });
+
+
+        </script>
+
+        <!-- Incluez vos fichiers JavaScript après avoir déclaré la variable username -->
+        <!-- <script src="JS/envoisms.js" defer></script> -->
 
 </div>
 
