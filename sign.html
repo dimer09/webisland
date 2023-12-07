@@ -1,5 +1,10 @@
 <link href="//db.onlinewebfonts.com/c/a4e256ed67403c6ad5d43937ed48a77b?family=Core+Sans+N+W01+35+Light" rel="stylesheet" type="text/css"/>
-<link rel="stylesheet" href="CSS/logsign_css.css" type="text/css">
+<link rel="stylesheet" href="CSS/sign.css" type="text/css">
+<div id="video-container">
+  <video autoplay muted loop id="myVideo">
+      <source src="Videos/video1.mp4" type="video/mp4">
+  </video>
+  <div class="video-overlay"></div>
 <div class="background-blur">
     <div class="typewriter">
         <h1>Connect to Your Account :</h1><br>
@@ -16,4 +21,22 @@
         </div>
     </div>
   </div>
+</div>
+<script>
+  var video = document.getElementById('myVideo');
+  var videoSources = [
+    "Videos/video1.mp4",
+  ];
+  var currentIndex = 0;
+
+  video.addEventListener('ended', function () {
+    currentIndex++;
+    if (currentIndex >= videoSources.length) {
+      currentIndex = 0;
+    }
+    video.src = videoSources[currentIndex];
+    video.load();
+    video.play();
+  });
+</script>
 </div>

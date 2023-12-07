@@ -20,15 +20,15 @@ nav {
     display: flex;
     justify-content: space-between; /* Répartit l'espace entre les éléments */
     align-items: center; /* Centre les éléments verticalement */
-    padding: 0 20px; /* Padding horizontal */
+    padding: 0 ; /* Padding horizontal */
     box-shadow: none; /* Supprime l'ombre */
     background-color: transparent; /* Rend le fond transparent */
 }
 
 /* Style du titre dans la barre de navigation */
 .nav-title {
-    font-family: 'Pirates', cursive; /* Utilise la police personnalisée */
-    font-size: 24px; /* Taille de la police du titre */
+    font-family: cursive; /* Utilise la police personnalisée */
+    font-size: 14px; /* Taille de la police du titre */
     color: #d3a625; /* Couleur dorée pour le style pirate */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Ombre portée pour le texte */
 }
@@ -48,9 +48,10 @@ nav {
 
 /* Style des liens de la barre de navigation */
 .nav-links a {
+    font-family: cursive;
     text-decoration: none;
-    color: white;
-    font-size: 28px;
+    color: black;
+    font-size: 20px;
     transition: color 0.3s ease-in-out;
 }
 
@@ -102,13 +103,18 @@ h2 {
 
 .column {
      /* Largeur fixe pour chaque colonne */
-     width: 200px;
+     background-image: url("RESSOURCES/Images/arbre.png");
+     background-size: cover;
+     background-position: center center;
+     background-repeat: no-repeat; /* Assurez-vous que l'image ne se répète pas */
+    width: 200px;
+    height: 350px;
     flex-shrink: 0;
     margin: 20px;
     ; /* Adjust the percentage as necessary */
     box-sizing: border-box; /* This makes sure padding is included in the width */
     border-radius: 10px;
-    border: 1px #000000 solid;
+    border: 3px #000000 solid;
     overflow: hidden; /* Empêche le débordement du contenu */
     position: relative; /* Pour positionner absolument les infos par rapport à cette div */
     transition: transform 0.3s ease;
@@ -117,8 +123,10 @@ h2 {
 }
 /* Style initial des images (plus petites) */
 .column img {
+    
     width: 40%; /* Taille initiale plus petite */
     height: auto;
+    
     transition: transform 0.3s ease; /* Transition douce pour le zoom */
 }
 
@@ -181,21 +189,43 @@ p {
     margin: 10px;
 }
 
+
+
 .column_1 {
     /*gradient color*/
-    background-image: linear-gradient(moccasin, white);
+    background-image: url("../RESSOURCES/Images/arbre.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+   
 
 }
-
 .column_2 {
     /*gradient color*/
-    background-image: linear-gradient(mediumseagreen, white);
+    background-image: url("../RESSOURCES/Images/waterfal.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 
 }
 
 .column_3 {
     /*gradient color*/
-    background-image: linear-gradient(royalblue, white);
+    background-image: url("../RESSOURCES/Images/poupee.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.column_4 {
+    /*gradient color*/
+    background-image: url("../RESSOURCES/Images/desert.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.column_5 {
+    /*gradient color*/
+    background-image: url("../RESSOURCES/Images/ville.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 
 }
 
@@ -263,43 +293,83 @@ p {
   }
 /* Style pour le conteneur du carrousel */
 
-/* Style pour le carrousel lui-même */
-.carousel {
-    display: flex;
-    transition: transform 0.5s ease;
+footer {
+    width: 100%; /* Assurez-vous que le footer a une largeur de 100% */
+    margin: 0; /* Aucune marge extérieure pour le footer */
+    padding: 0; /* Padding vertical, pas de padding horizontal */
+    background-color: gray; /* Couleur de fond pour le footer */
+    color: white; /* Couleur du texte pour le footer */
+    text-align: center; /* Centrer le texte à l'intérieur du footer */
+    position: relative; /* Position relative pour le placement */
+    bottom: 0; /* Positionner au bas de la page */
+    left: 0; /* Aligner à gauche */
+  }
+
+
+
+  .locked {
+    position: relative;
+    /* Autres styles pour les étapes verrouillées */
 }
 
-.carousel-container {
-    overflow: hidden;
-}
-
-
-
-.carousel-group {
-    display: flex;
-    min-width: 100%; /* Chaque groupe occupe 100% de la largeur du conteneur */
-}
-
-
-/* Style pour les boutons de navigation */
-.carousel-button {
+.locked .lock-icon {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0,0,0,0.5);
+    top: 50%;  /* Centrer l'icône verticalement */
+    left: 50%; /* Centrer l'icône horizontalement */
+    transform: translate(-50%, -50%); /* Centrage précis */
+    /* Taille de l'icône, etc. */
+}
+.stages-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.stage {
+    position: relative;
+    margin: 10px;
+    /* Vos autres styles pour la stage ici */
+}
+
+.stage-image {
+    width: 200px; /* Ajustez selon les dimensions de vos images */
+    height: auto;
+    display: block;
+}
+
+.lock-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent noir */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lock-icon {
+    width: 50px; /* Taille de l'icône de verrouillage */
+    height: 50px;
+}
+
+.info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
+    text-align: center;
 }
 
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
+/* Style pour les étapes verrouillées */
+.locked .info {
+    background-color: rgba(255, 0, 0, 0.7); /* Fond rouge semi-transparent pour les infos des étapes verrouillées */
 }
 
 
   
+

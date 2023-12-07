@@ -8,7 +8,7 @@ body {
 
 @font-face {
     font-family: 'Pirates';
-    src: url('../fonts/Pirates.ttf') format('truetype');
+    src: url('../RESSOURCES/FONTS/Pirates.ttf') format('truetype');
 }
 body, button, input, textarea {
     font-family: 'Pirates', sans-serif;
@@ -16,10 +16,10 @@ body, button, input, textarea {
 
 
 .user-info {
+    display: flex; /* Utilisez flexbox pour un meilleur contrôle de la mise en page */
     padding: 20px;
-    /* background-color: #fff; */
-    background : url("../Ressources/Images/BACKGROUNDS/old_paper_background.jpg");
-    display: flex;
+    background-color: #fff; 
+    font-family: cursive;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -27,12 +27,13 @@ body, button, input, textarea {
 }
 
 .user-name {
-    font-size: 1.2em;
+    font-size: 1.9em;
     color: #333;
 }
 
+
 .user-results {
-    font-size: 1em;
+    font-size: 1.9em;
     color: #333;
 }
 
@@ -203,4 +204,31 @@ footer {
 .button-container button:hover {
     opacity: 0.9;
 }
+
+.site-logo {
+    height: 80px; /* Ou toute autre hauteur appropriée */
+    width: auto; /* Pour maintenir le ratio aspect */
+    margin-right: 10px; /* Pour ajouter un peu d'espace entre le logo et le texte */
+    float: left; /* Pour aligner le logo à gauche du texte */
+}
+
+.quiz-title {
+    font-size: 24px; /* Taille du titre */
+    font-weight: bold; /* Rendre le titre plus épais */
+    text-align: center; /* Centrer le titre */
+    margin-bottom: 20px; /* Ajoutez de l'espace en dessous du titre */
+    color: black; /* Couleur du titre, ajustez selon votre préférence */
+    text-transform: uppercase; /* Optionnel: Mettre le titre en majuscules */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Optionnel: Ajouter une ombre au titre pour le faire ressortir */
+}
+
+@keyframes spin {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+  }
+  
+  .rotating-badge {
+    animation: spin 3s linear infinite;
+  }
+  
 

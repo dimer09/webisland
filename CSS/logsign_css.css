@@ -24,7 +24,7 @@
     display: block;
     text-align: center;
     overflow: hidden; /* Assurez-vous que le contenu est masqué lorsque la largeur de bordure est de 0 */
-    border-right: .15em solid orange; /* Utilisez une bordure pour créer l'effet de curseur */
+    border-right: .15em solid transparent; /* Utilisez une bordure pour créer l'effet de curseur */
     white-space: nowrap; /* Empêche le texte de passer à la ligne suivante */
     /* Centrer le titre si nécessaire */
     letter-spacing: .15em; /* Ajustez l'espacement des lettres */
@@ -93,25 +93,13 @@
     margin-right:auto;
     margin-top: 50px;
   }
-  
-  ::-moz-selection {
-    background: #19547c;
-  }
-  ::selection {
-    background: #19547c;
-  }
-  input::-moz-selection {
-    background: #037db6;
-  }
-  input::selection {
-    background: #037db6;
-  }
+ 
   
   body{
     color: #fff;
     background-color:#f0f0f0;
     font-family:helvetica;
-    background: url("../RESSOURCES/Images/BACKGROUNDS/fondlogin.png") #0f2439 center top;
+    
     
   }
   /* Centrer le module qui contient les inputs */
@@ -350,7 +338,7 @@ input[type="password"] {
   left: 0;
   right: 0;
   bottom: 0;
-  backdrop-filter: blur(5px); /* Flouter l'arrière-plan */
+  backdrop-filter: blur(15px); /* Flouter l'arrière-plan */
   z-index: 1; /* Assurez-vous qu'il est derrière les autres éléments */
 }
 
@@ -393,3 +381,23 @@ input[type="password"] {
   color: #ffffff; /* Texte blanc */
   text-decoration: none; /* Garde le texte sans soulignement */
 }
+
+#video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(10px);
+  z-index: 1; /* Assurez-vous que cette couche est entre la vidéo et le contenu */
+}
+
+

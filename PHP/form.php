@@ -1,10 +1,11 @@
 <?php
 // form.php
+session_start();
 
 $host = 'localhost'; // ou l'adresse de votre serveur de base de données
-$dbname = 'nom_de_la_base_de_donnees';
-$username = 'nom_utilisateur';
-$password = 'mot_de_passe';
+$dbname = 'webisland';
+$username = 'root';
+$password = '';
 
 // Connection à la base de données
 $conn = new mysqli($host, $username, $password, $dbname);
@@ -17,6 +18,7 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Récupérer les données du formulaire
     $username = $conn->real_escape_string($_POST['username']);
+    session_start();
     $email = $conn->real_escape_string($_POST['email']);
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Hacher le mot de passe
 
@@ -25,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conn->query($sql) === TRUE) {
         // Rediriger l'utilisateur vers map.html
-        header('Location: PAGES/map.html');
+        header('Location: ../inde.php');
         exit();
     } else {
         echo "Erreur : " . $sql . "<br>" . $conn->error;
