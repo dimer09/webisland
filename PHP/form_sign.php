@@ -38,9 +38,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         } else {
             echo "Mot de passe incorrect";
+            header('Location: ../sign.html');
         }
     } else {
         echo "Aucun utilisateur trouvé avec ce nom d'utilisateur";
+        header('Location: ../sign.html');
     }
 }
 

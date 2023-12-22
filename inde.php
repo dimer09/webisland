@@ -1,33 +1,32 @@
 <?php
 session_start(); // Démarrer la session
 
-// Connectez-vous à la base de données
+
 try {
     $pdo = new PDO('mysql:host=localhost;dbname=webisland', 'root', '');
 
-    // Vérifiez si le username est enregistré dans la session
+    
     if (isset($_SESSION['username'])) {
         $username = $_SESSION['username'];
 
-        // Récupérez le current_stage depuis la base de données pour cet utilisateur
+        // Récuperation du current_stage depuis la base de données 
         $stmt = $pdo->prepare("SELECT current_stage FROM users WHERE username = ?");
         $stmt->execute([$username]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        // Si l'utilisateur existe et a un current_stage, utilisez-le, sinon définissez-le à 1
+        // Si l'utilisateur existe et a un current_stage
         $current_stage = $user ? (int)$user['current_stage'] : 1;
         echo $current_stage;
     } else {
-        // Si l'utilisateur n'est pas connecté, définissez current_stage à 1 ou redirigez vers la page de connexion
-        // $current_stage = 1; // Optionnel: Décommentez si vous voulez montrer la première étape même si l'utilisateur n'est pas connecté
-        header('Location: logsign.html'); // Redirigez vers la page de connexion
+
+        header('Location: ../PAGES/logsign.html'); // Rediriger vers la page de connexion
         exit();
     }
 } catch (PDOException $e) {
     die("Erreur de connexion à la base de données: " . $e->getMessage());
 }
 
-// ... (Le reste de votre code HTML et PHP pour afficher la page)
+
 ?>
 
 <!DOCTYPE html>
@@ -39,10 +38,22 @@ try {
     <title>Web Island</title>
 </head>
 <body>
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6573496707843602b8ffc6e2/1hh55dftd';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
 
     <div id="video-container">
         <video autoplay muted loop id="myVideo">
-            <source src="Videos/video2.mp4" type="video/mp4">
+            <source src="Videos/video1.mp4" type="video/mp4">
         </video>
         <div class="video-overlay"></div>
     
@@ -52,23 +63,27 @@ try {
                 <nav>
                     <div class="nav-title">WEB ISLAND KINSHASA O2027</div>
                     <ul class="nav-links">
-                        <li><a href="#home">Map</a></li>
+                        <li><a href="">Home</a></li>
+                        <li><a href="map.php">Map</a></li>
                         <li><a href="forum.php">Forum</a></li>
-                        <li><a href="">Courses</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="cours.php">Courses</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
                 <h1>
                     <?php
+
+                        echo "<div class='stage'>";
                        
-                        // Vérifiez si l'utilisateur est connecté et affichez un message personnalisé
+                        // affiche run message personnalisé
                         if (isset($_SESSION['username'])) {
                             echo "Welcome, " . htmlspecialchars($_SESSION['username']);
                         } else {
                             echo "Our Trip to Web Island";
                         }
-                         // Si current_stage n'est pas défini, utilisez 1 par défaut
-                        $total_stages = 5; // Le nombre total d'étapes (stages)
+                        echo "</div>";
+                         // Si current_stage n'est pas défini, utiliser 1 par défaut
+                        $total_stages = 5; 
                         echo "<div class='stages-container'>";
 
                         for ($stage = 1; $stage <= $total_stages; $stage++) {
@@ -78,15 +93,15 @@ try {
                             echo "<h2>Visit $stage</h2>";
             
                             if ($stage <= $current_stage) {
-                                // L'étape est débloquée, donc nous créons un lien vers la page de l'étape
-                                echo "<a href='stage$stage.php'>"; // Assurez-vous que le lien est correct
+                                // L'étape est débloquée
+                                echo "<a href='stage$stage.php'>"; 
                             }
             
-                            // Afficher l'image de l'étape
+                       
                             echo "cick me";
             
                             if ($stage <= $current_stage) {
-                                // Fermez la balise <a> si l'étape est débloquée
+                                // Fermer la balise <a> si l'étape est débloquée
                                 echo "</a>";
                             } elseif ($stage_class == " locked") {
                                 // Afficher une icône de verrouillage pour les étapes verrouillées
@@ -103,17 +118,17 @@ try {
                         
                 </h1>
                 <p>Here are some postcards from our trip to Web Island. Enjoy !!!</p>
-                <script src="JS/getUserInfo.js"></script> <!-- Ce script contient la fonction getUserInfo() -->
+                <script src="JS/getUserInfo.js"></script> 
                 <script>
-                    // Lorsque la page est chargée, récupérez les informations de l'utilisateur
+       
                     getUserInfo().then(userInfo => {
                         if (userInfo.error) {
                             console.error(userInfo.error);
-                            // Rediriger vers la page de connexion ou gérer l'erreur
+                           
                         } else {
-                            // Utiliser les informations récupérées, par exemple :
+                  
                             window.current_stage = userInfo.current_stage;
-                            // Mettre à jour l'interface utilisateur avec les informations récupérées
+                            
                         }
                     });
                 </script>
@@ -126,74 +141,8 @@ try {
                 </h2>
         
             </footer>
+                </div>
+
         </div>
-
-        <script>
-            var video = document.getElementById('myVideo');
-            var videoSources = [
-            "Videos/video1.mp4",
-            "Videos/video2.mp4"
-            ];
-            var currentIndex = 0;
-        
-            video.addEventListener('ended', function () {
-            currentIndex++;
-            if (currentIndex >= videoSources.length) {
-                currentIndex = 0;
-            }
-            video.src = videoSources[currentIndex];
-            video.load();
-            video.play();
-            });
-        </script>
-         <script>
-        // Déclarez une variable JavaScript pour le nom d'utilisateur
-        var username = <?php echo json_encode($_SESSION['username'] ?? 'Guest'); ?>;
-        document.addEventListener('DOMContentLoaded', function() {
-        const chatMessages = document.getElementById('chatMessages');
-        const messageInput = document.getElementById('messageInput');
-        const sendButton = document.getElementById('sendButton');
-        console.log({ chatMessages, messageInput, sendButton });
-        // const username = "<?php echo htmlspecialchars($_SESSION['username'] ?? 'Guest'); ?>"; 
-        // Utilisez 'Guest' comme nom par défaut
-       
-        console.log('Nom d\'utilisateur :', username);
-        
-
-        function sendMessage() {
-            const message = messageInput.value.trim();
-            if (message) {
-                const messageElement = document.createElement('div');
-                messageElement.classList.add('message');
-                messageElement.innerHTML = `
-                    <span class="username">${username}</span>: ${message}
-                `;
-
-                chatMessages.appendChild(messageElement);
-                messageInput.value = '';
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }
-        }
-
-        sendButton.addEventListener('click', sendMessage);
-
-        messageInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                sendMessage();
-            }
-        });
-    });
-
-
-        </script>
-
-        <!-- Incluez vos fichiers JavaScript après avoir déclaré la variable username -->
-        <!-- <script src="JS/envoisms.js" defer></script> -->
-
-</div>
-
-
-
-    
 </body>
 </html>

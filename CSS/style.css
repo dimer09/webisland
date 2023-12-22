@@ -29,7 +29,8 @@ nav {
 .nav-title {
     font-family: cursive; /* Utilise la police personnalisée */
     font-size: 14px; /* Taille de la police du titre */
-    color: #d3a625; /* Couleur dorée pour le style pirate */
+    color: orange; /* Couleur dorée pour le style pirate */
+    font-size: 28px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Ombre portée pour le texte */
 }
 
@@ -50,7 +51,7 @@ nav {
 .nav-links a {
     font-family: cursive;
     text-decoration: none;
-    color: black;
+    color: white;
     font-size: 20px;
     transition: color 0.3s ease-in-out;
 }
@@ -160,6 +161,25 @@ h2 {
 }
 
 /* Animation de saisie de texte */
+
+.stage {
+    overflow: hidden; 
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; 
+    animation: typing 9.5s steps(180, end), blink-caret 3.75s step-end infinite;
+}
+@keyframes typing {
+    from { width: 0; }
+    to { width: 10%; }
+}
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: transparent; }
+}
+
+
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }
@@ -181,7 +201,7 @@ p {
 }
 
 
-/* " >* " means for this class and ALL childs*/
+
 
 .flex-container>* {
     padding: 10px;
@@ -208,21 +228,21 @@ p {
 }
 
 .column_3 {
-    /*gradient color*/
+
     background-image: url("../RESSOURCES/Images/poupee.png");
     background-size: cover;
     background-repeat: no-repeat;
 
 }
 .column_4 {
-    /*gradient color*/
+  
     background-image: url("../RESSOURCES/Images/desert.png");
     background-size: cover;
     background-repeat: no-repeat;
 
 }
 .column_5 {
-    /*gradient color*/
+
     background-image: url("../RESSOURCES/Images/ville.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -230,7 +250,6 @@ p {
 }
 
 
-/* Create a "link" template like a button (with transition)*/
 
 .link {
     opacity: 0.5;
@@ -242,16 +261,16 @@ p {
 }
 
 
-/* for display over 768px width */
+
 
 @media all and (min-width: 768px) {
-    /* flex parameter for all columns */
+    
     .column {
         flex: 1 auto;
     }
 }
 
-/* ... vos autres styles ... */
+
 
 #myVideo {
     position: fixed;
@@ -261,14 +280,12 @@ p {
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -100; /* Assurez-vous que la vidéo est derrière tout le contenu */
+    z-index: -100; 
     -webkit-backdrop-filter: blur(10px); /* Pour les navigateurs Safari */
     backdrop-filter: blur(100px); /* L'effet de flou */
   }
   
-  /* Ajoutez des styles supplémentaires si nécessaire pour les autres éléments pour qu'ils soient visibles au-dessus de la vidéo */
  
-
   #video-container {
     position: relative;
     width: 100%;
@@ -284,22 +301,22 @@ p {
     right: 0;
     bottom: 0;
     backdrop-filter: blur(10px);
-    z-index: 1; /* Assurez-vous que cette couche est entre la vidéo et le contenu */
+    z-index: 1; 
   }
   
   .flex-container {
     position: relative;
-    z-index: 2; /* Plus élevé que .video-overlay pour s'assurer que le contenu est au-dessus de l'effet de flou */
+    z-index: 2; 
   }
 /* Style pour le conteneur du carrousel */
 
 footer {
-    width: 100%; /* Assurez-vous que le footer a une largeur de 100% */
+    width: 100%; 
     margin: 0; /* Aucune marge extérieure pour le footer */
     padding: 0; /* Padding vertical, pas de padding horizontal */
-    background-color: gray; /* Couleur de fond pour le footer */
+    background-color: black; /* Couleur de fond pour le footer */
     color: white; /* Couleur du texte pour le footer */
-    text-align: center; /* Centrer le texte à l'intérieur du footer */
+    text-align: center; 
     position: relative; /* Position relative pour le placement */
     bottom: 0; /* Positionner au bas de la page */
     left: 0; /* Aligner à gauche */
@@ -309,7 +326,6 @@ footer {
 
   .locked {
     position: relative;
-    /* Autres styles pour les étapes verrouillées */
 }
 
 .locked .lock-icon {
@@ -317,7 +333,7 @@ footer {
     top: 50%;  /* Centrer l'icône verticalement */
     left: 50%; /* Centrer l'icône horizontalement */
     transform: translate(-50%, -50%); /* Centrage précis */
-    /* Taille de l'icône, etc. */
+   
 }
 .stages-container {
     display: flex;
@@ -328,11 +344,11 @@ footer {
 .stage {
     position: relative;
     margin: 10px;
-    /* Vos autres styles pour la stage ici */
+    
 }
 
 .stage-image {
-    width: 200px; /* Ajustez selon les dimensions de vos images */
+    width: 200px; 
     height: auto;
     display: block;
 }

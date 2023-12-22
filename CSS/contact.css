@@ -1,0 +1,188 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .title {
+    float: left; /* Titre à gauche */
+    padding: 10px 20px; /* Espacement autour du titre */
+    color: orange; /* Couleur du texte */
+    font-size: 1.2em; /* Taille du texte */
+    font-family: cursive; /* Style de police */
+  }
+  
+  /* Styles pour la navigation principale */
+  .main-header {
+    position: fixed; /* Fixé en haut de la page */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; 
+    background: transparent; /* Fond transparent */
+  }
+  
+  .main-nav {
+    float: right; /* Menu à droite */
+  }
+  
+  .main-nav ul {
+    list-style: none; /* Pas de puces */
+    margin: 0; /* Pas de marge extérieure */
+    padding: 0; /* Pas de marge intérieure */
+  }
+  
+  .main-nav li {
+    display: inline; /* Afficher les éléments de la liste en ligne */
+    margin-left: 20px; /* Espacement entre les éléments de la liste */
+  }
+  
+  .main-nav a {
+    text-decoration: none; /* Pas de soulignement */
+    color: white; /* Couleur du texte */
+    padding: 10px 15px; /* Espacement autour des liens */
+    font-size: 20px; /* Taille du texte */
+  }
+  
+  .main-nav a:hover {
+    color: orange; /* Couleur au survol */
+  }
+  
+  .team-section {
+    text-align: center;
+    background-color: transparent;
+    padding: 50px 0;
+    margin-top: 60px;
+  }
+  
+  .team-section h2 {
+    margin-bottom: 20px;
+    color :white;
+  }
+  
+  .team-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .team-member {
+    flex: 1;
+    max-width: calc(33.333% - 10px);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease; 
+  }
+  
+  .team-member img {
+    width: 100%;
+    display: block;
+    border-radius: 85px; /* Arrondir les coins de l'image */
+    
+  }
+  
+  .team-member:hover {
+    transform: scale(1.5); /* Agrandit l'image de 5% lors du survol */
+  }
+  
+ .menber1{
+
+    box-shadow: 0px 0px 35px 20px red;
+
+ }
+ .menber2{
+
+    box-shadow: 0px 0px 35px 20px green;
+
+ }
+ .menber3{
+
+    box-shadow: 0px 0px 35px 20px blue;
+
+ }
+ .menber4{
+
+    box-shadow: 0px 0px 35px 20px pink;
+
+ }
+ .menber5{
+
+    box-shadow: 0px 0px 35px 20px yellow;
+
+ }
+ .menber6{
+
+    box-shadow: 0px 0px 35px 20px rgb(5, 238, 255);
+
+ }
+  
+  .team-member h3 {
+    margin-top: 10px;
+    color:white;
+    font-family: cursive;
+  }
+  
+  .team-member p {
+    font-size: 0.9em;
+    color: white;
+  }
+  
+  .contact-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  .contact-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  #myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100; 
+    -webkit-backdrop-filter: blur(10px); /* Pour les navigateurs Safari */
+    backdrop-filter: blur(100px); /* L'effet de flou */
+  }
+  
+  
+  #video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+
+  
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(6px);
+    z-index: 1; 
+  }
+  
+  .flex-container {
+    position: relative;
+    z-index: 2; /* Plus élevé que .video-overlay pour s'assurer que le contenu est au-dessus de l'effet de flou */
+  }
+  
+  

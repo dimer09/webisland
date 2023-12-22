@@ -1,8 +1,10 @@
 <link href="//db.onlinewebfonts.com/c/a4e256ed67403c6ad5d43937ed48a77b?family=Core+Sans+N+W01+35+Light" rel="stylesheet" type="text/css"/>
-<link rel="stylesheet" href="CSS/logsign_css.css" type="text/css">
+<link rel="stylesheet" href="../CSS/logsign_css.css" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <div id="video-container">
     <video autoplay muted loop id="myVideo">
-        <source src="Videos/video2.mp4" type="video/mp4">
+        <source src="../Videos/video2.mp4" type="video/mp4">
     </video>
     <div class="video-overlay"></div>
   <div class="background-blur">
@@ -11,7 +13,7 @@
       </div>
       <div class="body-content">
         <div class="module">
-            <form class="form" action="PHP/form.php" method="post" enctype="multipart/form-data" autocomplete="off">
+            <form class="form" id="registrationForm" action="../PHP/form.php" method="post" enctype="multipart/form-data" autocomplete="off">
                 <div class="alert alert-error"></div>
                 <input type="text" placeholder="User Name" name="username" required />
                 <input type="email" placeholder="Email" name="email" required />
@@ -20,7 +22,10 @@
                 
                 <input type="submit" value="Register" name="register" class="btn btn-block btn-primary" />
             </form>
-            <a href="sign.html" class="btn btn-block btn-secondary">Login</a>
+            <div id="errorMessage" style="color: red;"></div>
+            
+            <a href="../PAGES/sign.html" class="btn btn-block btn-secondary">Login</a>
+            
           </div>
       </div>
     </div>

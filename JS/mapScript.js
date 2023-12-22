@@ -1,15 +1,24 @@
 // mapScript.js
-document.querySelectorAll('.map-location').forEach(item => {
+document.querySelectorAll('.location-bubble').forEach(item => {
   item.addEventListener('mouseenter', (e) => {
-      const info = e.target.getAttribute('data-info');
-      const popup = document.getElementById('info-popup');
+  
+    const infoElement = item.querySelector('.info');
+    const info = infoElement ? infoElement.textContent : '';
+    const popup = document.getElementById('info-popup');
+    if (popup) {
       popup.innerText = info;
       popup.style.display = 'block';
-      popup.style.left = e.pageX + 'px';
-      popup.style.top = e.pageY + 'px';
+      // Positionner la popup par rapport à l'élément '.location-bubble' et non par rapport à la page
+      const rect = item.getBoundingClientRect();
+      popup.style.left = rect.left + window.scrollX + 'px';
+      popup.style.top = rect.top + window.scrollY + 'px';
+    }
   });
 
   item.addEventListener('mouseleave', () => {
-      document.getElementById('info-popup').style.display = 'none';
+    const popup = document.getElementById('info-popup');
+    if (popup) {
+      popup.style.display = 'none';
+    }
   });
 });

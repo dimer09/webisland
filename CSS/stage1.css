@@ -11,12 +11,12 @@ body {
     src: url('../RESSOURCES/FONTS/Pirates.ttf') format('truetype');
 }
 body, button, input, textarea {
-    font-family: 'Pirates', sans-serif;
+    font-family: cursive;
 }
 
 
 .user-info {
-    display: flex; /* Utilisez flexbox pour un meilleur contrôle de la mise en page */
+    display: flex; 
     padding: 20px;
     background-color: #fff; 
     font-family: cursive;
@@ -70,6 +70,7 @@ body, button, input, textarea {
 
 .answer-list {
     list-style: none;
+    font-family: cursive;
     padding: 0;
 }
 
@@ -117,7 +118,7 @@ footer {
     opacity: 1;
 }
 
-/* Ajouter des transitions pour l'animation des informations de réponse */
+
 .info {
     display: none;
     font-size: 0.9em;
@@ -147,7 +148,6 @@ footer {
     font-weight: bold;
     padding-top: 35px;
     
-    /* ... autres styles ... */
 }
 .main-nav {
     display: flex;
@@ -156,7 +156,7 @@ footer {
     text-align: center;
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    /* ... autres styles ... */
+   
 }
 
 
@@ -171,7 +171,7 @@ footer {
 #badge {
     display: block;
     margin: 20px auto;
-    width: 100px; /* Ajustez la taille selon vos besoins */
+    width: 100px; 
 }
 
 /* Styles pour les boutons */
@@ -206,7 +206,7 @@ footer {
 }
 
 .site-logo {
-    height: 80px; /* Ou toute autre hauteur appropriée */
+    height: 80px;
     width: auto; /* Pour maintenir le ratio aspect */
     margin-right: 10px; /* Pour ajouter un peu d'espace entre le logo et le texte */
     float: left; /* Pour aligner le logo à gauche du texte */
@@ -217,9 +217,9 @@ footer {
     font-weight: bold; /* Rendre le titre plus épais */
     text-align: center; /* Centrer le titre */
     margin-bottom: 20px; /* Ajoutez de l'espace en dessous du titre */
-    color: black; /* Couleur du titre, ajustez selon votre préférence */
-    text-transform: uppercase; /* Optionnel: Mettre le titre en majuscules */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Optionnel: Ajouter une ombre au titre pour le faire ressortir */
+    color: black; 
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); 
 }
 
 @keyframes spin {
@@ -229,6 +229,13 @@ footer {
   
   .rotating-badge {
     animation: spin 3s linear infinite;
+  }
+  
+  .timer {
+
+    font-size: 1.5em;
+    color: #d9534f; /* Couleur rouge pour l'urgence */
+    margin-top: 10px; /* Une marge au-dessus du minuteur */
   }
   
 

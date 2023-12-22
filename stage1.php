@@ -9,8 +9,8 @@
 <body>
     
     <?php
-    session_start(); // Assurez-vous de démarrer la session au début du script
-    $username = isset($_SESSION['username']) ? $_SESSION['username'] : "Etranger"; // Remplacer "Invité" par un texte de votre choix si la session n'est pas définie
+    session_start(); 
+    $username = isset($_SESSION['username']) ? $_SESSION['username'] : "Etranger"; 
     ?>
     <div class="user-info">
         <img src="RESSOURCES/Images/logo.png" alt="Logo Web Island" class="site-logo">

@@ -1,17 +1,17 @@
-// Simulez un ensemble de questions pour le quiz
+
 const questions = [
     {
-        question: "Qu'est-ce que le HTML?",
+        question: "What is HTML?",
         answers: [
-            "Un langage de programmation",
-            "Un langage de balisage pour créer des pages web",
-            "Un système d'exploitation",
-            "Une base de données"
+            "A programming language",
+            "A markup language for creating web pages",
+            "An operating system",
+            "A database"
         ],
         correctAnswer: 1
     },
     {
-        question: "Que signifie CSS?",
+        question: "What does CSS stand for?",
         answers: [
             "Computer Style Sheets",
             "Creative Style System",
@@ -21,7 +21,7 @@ const questions = [
         correctAnswer: 2
     },
     {
-        question: "Quel élément HTML est utilisé pour définir un paragraphe?",
+        question: "Which HTML element is used to define a paragraph?",
         answers: [
             "<header>",
             "<paragraph>",
@@ -31,17 +31,17 @@ const questions = [
         correctAnswer: 2
     },
     {
-        question: "À quoi sert la propriété CSS 'background-color'?",
+        question: "What is the purpose of the CSS 'background-color' property?",
         answers: [
-            "Changer la couleur du texte",
-            "Changer la couleur de l'arrière-plan d'un élément",
-            "Définir l'espacement entre les lettres",
-            "Créer des animations"
+            "Change the color of the text",
+            "Change the background color of an element",
+            "Set the spacing between letters",
+            "Create animations"
         ],
         correctAnswer: 1
     },
     {
-        question: "Quel attribut HTML est utilisé pour définir une feuille de style externe?",
+        question: "Which HTML attribute is used to define an external style sheet?",
         answers: [
             "class",
             "src",
@@ -51,27 +51,27 @@ const questions = [
         correctAnswer: 3
     },
     {
-        question: "Quel est le but de l'élément HTML <a>?",
+        question: "What is the purpose of the HTML <a> element?",
         answers: [
-            "Créer un paragraphe",
-            "Insérer une image",
-            "Créer un lien hypertexte",
-            "Définir un titre"
+            "Create a paragraph",
+            "Insert an image",
+            "Create a hyperlink",
+            "Define a title"
         ],
         correctAnswer: 2
     },
     {
-        question: "Comment insère-t-on un commentaire en HTML?",
+        question: "How do you insert a comment in HTML?",
         answers: [
-            "// Ceci est un commentaire",
-            "/* Ceci est un commentaire */",
-            "<!-- Ceci est un commentaire -->",
-            "# Ceci est un commentaire"
+            "// This is a comment",
+            "/* This is a comment */",
+            "<!-- This is a comment -->",
+            "# This is a comment"
         ],
         correctAnswer: 2
     },
     {
-        question: "Quelle propriété CSS est utilisée pour changer la police de caractères?",
+        question: "Which CSS property is used to change the font of text?",
         answers: [
             "font-family",
             "font-style",
@@ -81,17 +81,17 @@ const questions = [
         correctAnswer: 0
     },
     {
-        question: "Quel est le rôle de l'élément HTML <title>?",
+        question: "What is the role of the HTML <title> element?",
         answers: [
-            "Définir un titre dans le corps de la page",
-            "Définir le titre affiché dans l'onglet du navigateur",
-            "Créer une grande en-tête",
-            "Définir le titre d'une section"
+            "Define a title in the body of the page",
+            "Define the title displayed in the browser tab",
+            "Create a large header",
+            "Define the title of a section"
         ],
         correctAnswer: 1
     },
     {
-        question: "Que signifie 'HTML'?",
+        question: "What does 'HTML' stand for?",
         answers: [
             "Hyper Text Markup Language",
             "High Text Machine Language",
@@ -104,6 +104,7 @@ const questions = [
 
 
 
+
 let currentQuestionIndex = 0;
 let score = 0;
 
@@ -111,8 +112,6 @@ const userScore = document.getElementById('user-score');
 const questionNumber = document.getElementById('question-number');
 const questionContainer = document.querySelector('.question-container');
 
-// Affiche la question actuelle à l'utilisateur
-// ... (les autres parties du code restent les mêmes)
 
 // Fonction pour afficher la question suivante
 function showNextQuestion() {
@@ -150,10 +149,7 @@ function checkAnswer(selectedIndex, correctIndex) {
     currentQuestionIndex++;
     showNextQuestion();
 }
-// Supposons que nous avons une fonction qui récupère les informations de l'utilisateur depuis la session
 
-
-// ... Votre code existant pour showFinalResults ...
 
 // Appelez cette fonction à l'intérieur de showFinalResults quand le score est supérieur à 5
 function updateCurrentStage() {
@@ -168,49 +164,47 @@ function updateCurrentStage() {
         })
         .then(response => response.text())
         .then(data => {
-            console.log(data); // Traitez la réponse du serveur ici
+            console.log(data); // Traitee la réponse du serveur ici
         })
         .catch(error => console.error('Error:', error));
     }
 }
 
-// ... Votre code existant pour showFinalResults continue ici ...
-
 // Fonction pour afficher les résultats finaux
 function showFinalResults() {
-    let resultContent = `<div id="final-result"><h1>Votre score final est : ${score} / ${questions.length}</h1>`;
+    let resultContent = `<div id="final-result"><h1>Your final score  is : ${score} / ${questions.length}</h1>`;
 
     if (score >= 5 && score <= 7) {
         // Afficher le premier badge et un message
         resultContent += `<img id="badge" src="RESSOURCES/Images/argent.png">
-                          <p>Félicitations pour votre score!</p>`;
+                          <p>Congratulations for your score!</p>`;
     } else if (score >= 8 && score <= 9) {
         // Afficher le deuxième badge et un message
         resultContent += `<img id="badge" src="RESSOURCES/Images/diamant.png">
-                          <p>Excellent travail, presque parfait!</p>`;
+                          <p>Excellent work, almost perfect!</p>`;
     } else if (score === 10) {
         // Afficher un troisième badge et un message
         resultContent += `<img id="badge" src="RESSOURCES/Images/or.png">
-                          <p>Incroyable, un score parfait!</p>`;
+                          <p>Incredible, a perfect score!</p>`;
     } else {
         // Moins de 5 points
-        resultContent += `<p>Essayez encore pour améliorer votre score.</p>`;
+        resultContent += `<p>Try again to improve your score.</p>`;
     }
 
     // Ajouter des boutons en fonction du score
     if (score < 5) {
         resultContent += `<div class="button-container">
-                              <button onclick="window.location.href='cours.php';">Cours</button>
-                              <button onclick="window.location.reload();">Recommencer</button>
+                              <button onclick="window.location.href='cours.php';">Courses</button>
+                              <button onclick="window.location.reload();">Restart</button>
                           </div>`;
     } else {
         resultContent += `<div class="button-container">
-                              <button onclick="window.location.href='inde.php';">Accueil</button>
-                              <button onclick="window.location.href='lieu.php';">Lieu 3D</button>
-                              <button onclick="window.location.href='cours.php';">Cours</button>
+                              <button onclick="window.location.href='inde.php';">Home</button>
+                              <button onclick="window.location.href='cours.php';">Courses</button>
                           </div>`;
                           updateCurrentStage();
     }
+
 
     resultContent += `</div>`;
     const questionContainer = document.querySelector('.question-container');
